@@ -1,6 +1,6 @@
 ### Что нужно?
 * JDK 1.8
-* Maven 3.2.*
+* Maven 3+
 
 ### С чего начать?
 `mvn clean package spring-boot:run`
