@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Welcome page</title>
+</head>
+<body>
+    <p th:text="'Hello, '  + ${name} + '! We have following vacations'"/>
+    <ul>
+        <li th:each="vac: ${vacations}">
+            <p th:text="${vac.employee} + ': ' + ${vac.vacationStart} + ' - ' + ${vac.vacationEnd}"/>
+        </li>
+    </ul>
+</body>
+</html>
