@@ -6,10 +6,10 @@
     <title>Welcome page</title>
 </head>
 <body>
-<p th:text="'Hello, '  + ${name} + '! We have following employees'"/>
+<p th:text="'We have following vacations for ' + ${employee.name} + ':'"/>
 <ul>
-    <li th:each="employee: ${employees}">
-        <a th:text="${employee.name}" th:href="@{|/employee_vacations/${employee.id}|}" />
+    <li th:each="vac: ${employee.vacations}">
+        <p th:text="${vac.vacationStart} + ' - ' + ${vac.vacationEnd}"/>
     </li>
 </ul>
 </body>

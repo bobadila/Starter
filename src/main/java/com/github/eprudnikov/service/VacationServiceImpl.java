@@ -5,7 +5,10 @@ import com.github.eprudnikov.repository.VacationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("vacationService")
+/**
+ * Created by user on 02.12.2015.
+ */
+@Service
 public class VacationServiceImpl implements VacationService {
 
     @Autowired
