@@ -9,7 +9,7 @@
 <p th:text="'We have following vacations for ' + ${employee.name} + ':'"/>
 <ul>
     <li th:each="vac: ${employee.vacations}">
-        <p th:text="${vac.vacationStart} + ' - ' + ${vac.vacationEnd}"/>
+        <p th:text="${{vac.vacationStart}} + ' - ' + ${{vac.vacationEnd}}"/>
     </li>
 </ul>
 </body>
