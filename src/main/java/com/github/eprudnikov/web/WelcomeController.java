@@ -1,7 +1,9 @@
 package com.github.eprudnikov.web;
 
+import com.github.eprudnikov.domain.Employee;
 import com.github.eprudnikov.service.EmployeeService;
 import com.github.eprudnikov.service.VacationService;
+import org.apache.catalina.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +40,12 @@ public class WelcomeController {
     public String employeeVacations(@PathVariable long id, Model model) {
         logger.info("Vacations page for employee with id=" + id + " is called.");
 
-        model.addAttribute("employee", employeeService.findById(id));
+        Employee employee = employeeService.findById(id);
+        if (employee == null) {
+            throw new UserNotFoundException();
+        }
+
+        model.addAttribute("employee", employee);
         return "employee";
     }
 }

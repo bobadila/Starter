@@ -6,7 +6,7 @@
     <title>Welcome page</title>
 </head>
 <body>
-<p th:text="'Hello, '  + ${name} + '! We have following employees'"/>
+<p th:text="#{welcome} + ', ' + ${name} + '!' + #{employee_phrase} + ':'" />
 <ul>
     <li th:each="employee: ${employees}">
         <a th:text="${employee.name}" th:href="@{|/employee_vacations/${employee.id}|}" />
